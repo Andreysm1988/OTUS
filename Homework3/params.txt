@@ -1,0 +1,2 @@
+python -m pytest -s -v --browser chrome test_browser.py
+python -m pytest -s -v --browser firefox test_browser.py
