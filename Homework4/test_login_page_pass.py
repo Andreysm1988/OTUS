@@ -8,6 +8,5 @@ def test_login_fail(driver, request):
     driver.find_element(By.ID, "input-password").send_keys("admin")
     driver.find_element(By.CLASS_NAME, "btn.btn-primary").click()
     warning = driver.find_element(By.CLASS_NAME, "close")
-    #warning_text = warning.text.rstrip("\n*'")
     assert warning
-    #assert warning_text == "No match for Username and/or Password."
+   
