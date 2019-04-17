@@ -34,3 +34,9 @@ def driver(request):
         sys.exit(1)
     yield wd
     wd.quit()
+
+
+@pytest.fixture()
+def login_page(driver, request):
+    url = '/opencart/admin/'
+    driver.get("".join([request.config.getoption("--address"), url]))
