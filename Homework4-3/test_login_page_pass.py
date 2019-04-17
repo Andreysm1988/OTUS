@@ -7,5 +7,6 @@ def test_login_pass(driver):
     driver.find_element(By.ID, "input-username").send_keys("admin")
     driver.find_element(By.ID, "input-password").send_keys("admin")
     driver.find_element(By.CLASS_NAME, "btn.btn-primary").click()
-    warning = driver.find_element(By.CLASS_NAME, "close")
-    assert warning
+    warning = driver.find_element(By.CLASS_NAME, "modal-title.text-danger")
+    warning_text = warning.text.rstrip("\n")
+    assert warning_text == "Important Security Notification!"
